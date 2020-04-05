@@ -106,8 +106,8 @@ if [[ -z $(svn stat) ]]; then
 # The leading whitespace in the pattern is important
 # so it doesn't match potential readme.txt in subdirectories!
 elif svn stat trunk | grep -qvi " trunk/$README_NAME$"; then
-	echo "🛑 Other files have been modified; changes not deployed"
-	exit 1
+	echo "🛑 Other files have been modified - warning!"
+	#exit 1
 fi
 
 # Readme also has to be updated in the .org tag
